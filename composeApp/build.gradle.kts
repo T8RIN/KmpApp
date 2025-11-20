@@ -8,6 +8,7 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.composeHotReload)
+    alias(libs.plugins.serialization)
 }
 
 kotlin {
@@ -54,6 +55,21 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+
+            implementation("org.jetbrains.compose.runtime:runtime:1.9.3")
+            implementation("org.jetbrains.compose.foundation:foundation:1.9.3")
+            implementation("org.jetbrains.compose.material3:material3:1.9.0")
+            implementation("io.ktor:ktor-client-core:3.3.2")
+            implementation("io.ktor:ktor-client-cio:3.3.2")
+            implementation("io.ktor:ktor-client-content-negotiation:3.3.2")
+            implementation("io.ktor:ktor-serialization-kotlinx-json:3.3.2")
+            implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
+            implementation("io.coil-kt.coil3:coil-compose:3.3.0")
+            implementation("io.coil-kt.coil3:coil-network-ktor3:3.3.0")
+            implementation("com.squareup.okio:okio:3.16.4")
+        }
+        iosMain.dependencies {
+            implementation("io.ktor:ktor-client-darwin:3.3.2")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
