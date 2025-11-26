@@ -42,6 +42,7 @@ fun App() {
 
             when (state) {
                 WeatherState.Loading -> CircularProgressIndicator(color = Color.White)
+
                 is WeatherState.Error -> Error(
                     msg = state.msg,
                     retry = { viewModel.onCityChange(city) },

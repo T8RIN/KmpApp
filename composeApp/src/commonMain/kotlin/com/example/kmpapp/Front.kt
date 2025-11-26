@@ -46,21 +46,29 @@ fun Front(
             .padding(24.dp)
     ) {
         Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
-            OutlinedTextField(
-                value = city,
-                onValueChange = onCityChange,
-                label = { Text("Город") },
-                singleLine = true,
-                colors = OutlinedTextFieldDefaults.colors(
-                    focusedTextColor = Color.White,
-                    unfocusedTextColor = Color.White,
-                    focusedLabelColor = Color.LightGray,
-                    unfocusedLabelColor = Color.LightGray,
-                    focusedBorderColor = Color.White,
-                    unfocusedBorderColor = Color.LightGray,
-                ),
-                modifier = Modifier.fillMaxWidth()
-            )
+            Row {
+                OutlinedTextField(
+                    value = city,
+                    onValueChange = onCityChange,
+                    label = { Text("Город") },
+                    singleLine = true,
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedTextColor = Color.White,
+                        unfocusedTextColor = Color.White,
+                        focusedLabelColor = Color.LightGray,
+                        unfocusedLabelColor = Color.LightGray,
+                        focusedBorderColor = Color.White,
+                        unfocusedBorderColor = Color.LightGray,
+                    ),
+                    modifier = Modifier.weight(1f)
+                )
+                FloatingActionButton(
+                    onClick = { onCityChange(city) },
+                    content = {
+                        Text("\uD83D\uDD0D\uFE0F")
+                    }
+                )
+            }
 
             Row(
                 verticalAlignment = Alignment.CenterVertically
